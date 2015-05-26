@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Less: Color Operation Functions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/colors.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Less: Color Operation Functions</h1>
+    <p><a href="https://github.com/russmaxdesign/less-colors">Github Page</a></p>
+
+    <h2>Variables</h2>
+    <table>
+      <tr>
+        <td class="box box1">@base</td>
+        <td class="box box10">@highlight</td>
+        <td class="box box48">@lowlight</td>
+      </tr>
+    </table>
+    <figure>
+      <figcaption class="markup-heading">Less code</figcaption>
+<pre><code class="language-scss">@base:       #2e54b5;
+@highlight:  #df5420;
+@lowlight:   #609161;
+</code></pre>
+    </figure>
+
+    <h2>Darken</h2>
+    <p>Decrease the lightness of a color in the HSL color space by an absolute amount.</p>
+    <table>
+      <tr>
+        <td class="box box1">@base</td>
+        <td class="box box2">darken 5%</td>
+        <td class="box box3">darken 10%</td>
+        <td class="box box4">darken 15%</td>
+        <td class="box box5">darken 20%</td>
+      </tr>
+    </table>
+    <figure>
+      <figcaption class="markup-heading">CSS</figcaption>
+<pre><code class="language-css">.box1 { background-color: @base; }
+.box2 { background-color: darken(@base, 5%); }
+.box3 { background-color: darken(@base, 10%); }
+.box4 { background-color: darken(@base, 15%); }
+.box5 { background-color: darken(@base, 20%); }
+</code></pre>
+    </figure>
+
+    <h2>Lighten</h2>
+    <p>Increase the lightness of a color in the HSL color space by an absolute amount.</p>
+    <table>
+      <tr>
+        <td class="box box1">@base</td>
+        <td class="box box6">lighten 5%</td>
+        <td class="box box7">lighten 10%</td>
+        <td class="box box8">lighten 15%</td>
+        <td class="box box9">lighten 20%</td>
+      </tr>
+    </table>
+    <figure>
+      <figcaption class="markup-heading">CSS</figcaption>
+<pre><code class="language-css">.box1 { background-color: @base; }
+.box6 { background-color: lighten(@base, 5%); }
+.box7 { background-color: lighten(@base, 10%); }
+.box8 { background-color: lighten(@base, 15%); }
+.box9 { background-color: lighten(@base, 20%); }
+</code></pre>
+    </figure>
+
+    <h2>Mix</h2>
+    <p>Mix two colors together in variable proportion. Opacity is included in the calculations.</p>
+    <table>
+      <tr>
+        <td class="box box1">@base</td>
+        <td class="box box11">10%</td>
+        <td class="box box12">25%</td>
+        <td class="box box13">50%</td>
+        <td class="box box14">75%</td>
+        <td class="box box15">90%</td>
+        <td class="box box10">@highlight</td>
+      </tr>
+    </table>
+    <figure>
+      <figcaption class="markup-heading">CSS</figcaption>
+<pre><code class="language-css">.box10 { background-color: @highlight; }
+.box11 { background-color: mix(@highlight, @base, 10%); }
+.box12 { background-color: mix(@highlight, @base, 25%); }
+.box13 { background-color: mix(@highlight, @base, 50%); }
+.box14 { background-color: mix(@highlight, @base, 75%); }
+.box15 { background-color: mix(@highlight, @base, 90%); }
+</code></pre>
+    </figure>
+
+    <h2>Saturate</h2>
+    <p>Increase the saturation of a color in the HSL color space by an absolute amount.</p>
+    <table>
+      <tr>
+        <td class="box box48">@lowlight</td>
+        <td class="box box16">saturate 25%</td>
+        <td class="box box17">saturate 50%</td>
+        <td class="box box18">saturate 75%</td>
+        <td class="box box19">saturate 100%</td>
+      </tr>
+    </table>
+    <figure>
+      <figcaption class="markup-heading">CSS</figcaption>
+<pre><code class="language-css">.box16 { background-color: saturate(@lowlight, 25%); }
+.box17 { background-color: saturate(@lowlight, 50%); }
+.box18 { background-color: saturate(@lowlight, 75%); }
+.box19 { background-color: saturate(@lowlight, 100%); }
+</code></pre>
+    </figure>
+
+    <h2>Desaturate</h2>
+    <p>Decrease the saturation of a color in the HSL color space by an absolute amount.</p>
+    <table>
+      <tr>
+        <td class="box box10">@highlight</td>
+        <td class="box box20">desaturate 25%</td>
+        <td class="box box21">desaturate 50%</td>
+        <td class="box box22">desaturate 75%</td>
+        <td class="box box23">desaturate 100%</td>
+      </tr>
+    </table>
+    <figure>
+      <figcaption class="markup-heading">CSS</figcaption>
+<pre><code class="language-css">
+.box20 { background-color: desaturate(@highlight, 25%); }
+.box21 { background-color: desaturate(@highlight, 50%); }
+.box22 { background-color: desaturate(@highlight, 75%); }
+.box23 { background-color: desaturate(@highlight, 100%); }
+</code></pre>
+    </figure>
+
+    <h2>Spin</h2>
+    <p>Rotate the hue angle of a color in either direction.</p>
+    <table>
+      <tr>
+        <td class="box box1">@base</td>
+        <td class="box box24">spin 90deg</td>
+        <td class="box box25">spin 180deg</td>
+        <td class="box box26">spin 270deg</td>
+      </tr>
+    </table>
+    <figure>
+      <figcaption class="markup-heading">CSS</figcaption>
+<pre><code class="language-css">.box24 { background-color: spin(@base, 90); }
+.box25 { background-color: spin(@base, 180); }
+.box26 { background-color: spin(@base, 270); }
+</code></pre>
+    </figure>
+
+    <h2>Fade</h2>
+    <p>Set the absolute transparency of a color. Can be applied to colors whether they already have an opacity value or not.</p>
+    <table>
+      <tr>
+        <td class="box box1">@base</td>
+        <td class="box box32">60%</td>
+        <td class="box box33">70%</td>
+        <td class="box box31">50%</td>
+        <td class="box box30">40%</td>
+        <td class="box box29">30%</td>
+        <td class="box box28">20%</td>
+        <td class="box box27">10%</td>
+      </tr>
+    </table>
+    <figure>
+      <figcaption class="markup-heading">CSS</figcaption>
+<pre><code class="language-css">.box27 { background-color: fade(@base, 10%); }
+.box28 { background-color: fade(@base, 20%); }
+.box29 { background-color: fade(@base, 30%); }
+.box30 { background-color: fade(@base, 40%); }
+.box31 { background-color: fade(@base, 50%); }
+.box32 { background-color: fade(@base, 60%); }
+.box33 { background-color: fade(@base, 70%); }
+</code></pre>
+    </figure>
+
+    <h2>Fade-in</h2>
+    <p>Decrease the transparency (or increase the opacity) of a color, making it more opaque.</p>
+    <table>
+      <tr>
+        <td class="box box27">10%</td>
+        <td class="box box28">20%</td>
+        <td class="box box29">30%</td>
+        <td class="box box30">40%</td>
+        <td class="box box31">50%</td>
+        <td class="box box32">60%</td>
+        <td class="box box33">70%</td>
+        <td class="box box1">@base</td>
+      </tr>
+    </table>
+    <figure>
+      <figcaption class="markup-heading">CSS</figcaption>
+<pre><code class="language-css">.box34 { background-color: fadein(@base, 10%); }
+.box35 { background-color: fadein(@base, 20%); }
+.box36 { background-color: fadein(@base, 30%); }
+.box37 { background-color: fadein(@base, 40%); }
+.box38 { background-color: fadein(@base, 50%); }
+.box39 { background-color: fadein(@base, 60%); }
+.box40 { background-color: fadein(@base, 70%); }
+</code></pre>
+    </figure>
+
+    <h2>Fade-out</h2>
+    <p>Decrease the transparency (or increase the opacity) of a color, making it more opaque.</p>
+    <table>
+      <tr>
+        <td class="box box1">@base</td>
+        <td class="box box41">10%</td>
+        <td class="box box42">20%</td>
+        <td class="box box43">30%</td>
+        <td class="box box44">40%</td>
+        <td class="box box45">50%</td>
+        <td class="box box46">60%</td>
+        <td class="box box47">70%</td>
+      </tr>
+    </table>
+    <figure>
+      <figcaption class="markup-heading">CSS</figcaption>
+<pre><code class="language-css">.box41 { background-color: fadeout(@base, 10%); }
+.box42 { background-color: fadeout(@base, 20%); }
+.box43 { background-color: fadeout(@base, 30%); }
+.box44 { background-color: fadeout(@base, 40%); }
+.box45 { background-color: fadeout(@base, 50%); }
+.box46 { background-color: fadeout(@base, 60%); }
+.box47 { background-color: fadeout(@base, 70%); }
+</code></pre>
+    </figure>
+
+    <h2>Greyscale</h2>
+    <p>Remove all saturation from a color in the HSL color space; the same as calling desaturate(@color, 100%).</p>
+    <table>
+      <tr>
+        <td class="box box1">@base</td>
+        <td class="box box10">High</td>
+        <td class="box box48">Low</td>
+      </tr>
+      <tr>
+        <td class="box box49">Greyscale</td>
+        <td class="box box50">Greyscale</td>
+        <td class="box box51">Greyscale</td>
+      </tr>
+    </table>
+    <figure>
+      <figcaption class="markup-heading">CSS</figcaption>
+<pre><code class="language-css">.box49 { background-color: greyscale(@base); }
+.box50 { background-color: greyscale(@highlight); }
+.box51 { background-color: greyscale(@lowlight); }
+</code></pre>
+    </figure>
+
+    <h2>Contrast</h2>
+    <p>Choose which of two colors provides the greatest contrast with another.</p>
+    <table>
+      <tr>
+        <td class="box box52">@base</td>
+        <td class="box box53">@base</td>
+        <td class="box box54">@base</td>
+        <td class="box box55">@base</td>
+        <td class="box box56">@base</td>
+      </tr>
+    </table>
+    <figure>
+      <figcaption class="markup-heading">CSS</figcaption>
+<pre><code class="language-css">.box52 {
+  color: contrast(#ddd);
+  background-color: #ddd;
+}
+
+.box53 {
+   color: contrast(#6E9800);
+   background-color: #6E9800;
+}
+
+.box54 {
+   color: contrast(#222222, #101010, #000, 30%);
+   background-color: #aaa;
+}
+
+.box55 {
+   color: contrast(#529FD6);
+   background-color: #529FD6;
+}
+
+.box56 {
+   color: contrast(#777);
+   background-color: #777;
+}
+</code></pre>
+    </figure>
+
+    <h2>Nesting</h2>
+    <p>Choose which of two colors provides the greatest contrast with another.</p>
+    <table>
+      <tr>
+        <td class="box box1">@base</td>
+        <td class="box box57">@base</td>
+      </tr>
+    </table>
+    <figure>
+      <figcaption class="markup-heading">CSS</figcaption>
+<pre><code class="language-css">.box57 { background-color: lighten(saturate(@base, 25%),25%); }
+</code></pre>
+    </figure>
+
+    <p><a href="https://github.com/russmaxdesign/less-colors">Github Page</a></p>
+  </div>
+
+<script src="assets/js/prism.js"></script>
+</body>
+</html>
